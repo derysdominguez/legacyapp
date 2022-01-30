@@ -1,10 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+
+import './assets/styles/css/main.css';
+import AppRouter from './routes/AppRouter';
 
 function App() {
   return (
     <div className="App">
-      
+      <AppRouter />
     </div>
   );
 }
