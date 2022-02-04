@@ -30,8 +30,8 @@ const Login = ({}) => {
 
   return(
 
-    <Container>
-      <Row className='text-center'>
+    <Container id='login' fluid className='text-center bg-dark text-light d-flex align-items-center'>
+      <Row className='mx-auto'>
         <Col md={{ span: 12 }}>
           <h1>Login</h1>
         </Col>

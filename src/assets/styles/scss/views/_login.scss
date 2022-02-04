@@ -1,0 +1,18 @@
+#login{
+    height: 100vh !important;
+    
+    .row{
+        @media (max-width: $screen-sm-max) {
+            width: 100%;
+            padding: 3rem 0;
+         }
+
+        @media (min-width: $screen-md-min) {
+            width: 40%;
+            padding: 5rem 0;
+         }
+        border-radius: 5px;
+        background-color: rgb(92, 92, 92);
+    }
+
+}

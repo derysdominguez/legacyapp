@@ -1,0 +1,14 @@
+
+$types : h6 h5 h4 h3 h2 h1;
+$base-size : 1rem;
+
+@media (min-width: $screen-md-min) {
+  $modular-scale : 0.5;
+  @each $type in $types{
+    #{$type} {
+      font-size : $base-size * $modular-scale !important;
+      $modular-scale : $modular-scale + 1;
+    }
+  }
+}
+

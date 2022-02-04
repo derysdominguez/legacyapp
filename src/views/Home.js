@@ -6,12 +6,14 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <Container>
+    <Container fluid className='header bg-dark text-light'>
         <Row className="text-center">
             <Col xs={{ span:12 }} md={{ span: 12}} className="mb-5">
-                <h1>legacy.gg</h1>
+                <h1 className='mb-5'>legacy.gg</h1>
                 <div>
-                    <Link to='/login' >Login</Link> or <Button as={ Link } to='/register' className="ml-1">Register</Button>
+                  <Button as={ Link } to='/login' className="mx-3 btn-lg" variant='primary'>Login</Button> 
+                  or 
+                  <Button as={ Link } to='/register' className="mx-3 btn-lg" variant='outline-primary'>Register</Button> 
                 </div>
             </Col>
         </Row>

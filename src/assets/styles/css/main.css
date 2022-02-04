@@ -1,0 +1,44 @@
+@media (min-width: 768px) {
+  h6 {
+    font-size: 0.5rem !important; }
+  h5 {
+    font-size: 1.5rem !important; }
+  h4 {
+    font-size: 2.5rem !important; }
+  h3 {
+    font-size: 3.5rem !important; }
+  h2 {
+    font-size: 4.5rem !important; }
+  h1 {
+    font-size: 5.5rem !important; } }
+
+.header {
+  padding: 13rem; }
+
+#login {
+  height: 100vh !important; }
+  #login .row {
+    border-radius: 5px;
+    background-color: #5c5c5c; }
+    @media (max-width: 767px) {
+      #login .row {
+        width: 100%;
+        padding: 3rem 0; } }
+    @media (min-width: 768px) {
+      #login .row {
+        width: 40%;
+        padding: 5rem 0; } }
+
+#register {
+  height: 100vh !important; }
+  #register .row {
+    border-radius: 5px;
+    background-color: #5c5c5c; }
+    @media (max-width: 767px) {
+      #register .row {
+        width: 100%;
+        padding: 3rem 0; } }
+    @media (min-width: 768px) {
+      #register .row {
+        width: 40%;
+        padding: 5rem 0; } }

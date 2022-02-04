@@ -23,8 +23,8 @@ const Register = ({  }) => {
   }, []);
  
   return (
-    <Container>
-    <Row className='text-center'>
+    <Container id='register' fluid className='text-center bg-dark text-light login d-flex align-items-center'>
+    <Row className='mx-auto'>
       <Col md={{ span: 12 }}>
         <h1>Register</h1>
       </Col>
