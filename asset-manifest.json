@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/legacygg/static/css/main.2edc575d.css",
+    "main.js": "/legacygg/static/js/main.0e537fac.js",
+    "index.html": "/legacygg/index.html",
+    "main.2edc575d.css.map": "/legacygg/static/css/main.2edc575d.css.map",
+    "main.0e537fac.js.map": "/legacygg/static/js/main.0e537fac.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2edc575d.css",
+    "static/js/main.0e537fac.js"
+  ]
+}
