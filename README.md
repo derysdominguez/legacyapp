@@ -1,70 +1,299 @@
-# Getting Started with Create React App
+React Project Architecture Assessment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Act as a Principal Frontend Architect and Staff Software Engineer performing a comprehensive architecture review of this React application.
 
-## Available Scripts
+Your goal is to evaluate the current state of the codebase, identify architectural problems, technical debt, maintainability risks, scalability concerns, and provide a detailed modernization roadmap.
 
-In the project directory, you can run:
+Project Context
 
-### `npm start`
+- Frontend framework: React
+- Internal UI Library: metronome-ui
+- Existing codebase has grown organically over time.
+- There are concerns around:
+  - Lack of clear architecture
+  - Inconsistent project structure
+  - Poor separation of concerns
+  - Code duplication
+  - Large and complex components
+  - Multiple components defined in a single file
+  - Poor naming conventions
+  - Anti-patterns
+  - Low maintainability
+  - Low reusability
+  - Inconsistent state management patterns
+  - Inconsistent data fetching patterns
+  - Difficult onboarding experience for new developers
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Analysis Requirements
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Perform a deep analysis of the entire codebase and generate a report with the following sections.
 
-### `npm test`
+1. Executive Summary
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Provide:
 
-### `npm run build`
+- Overall architecture score (1-10)
+- Maintainability score (1-10)
+- Scalability score (1-10)
+- Developer Experience score (1-10)
+- Technical Debt score (1-10)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Summarize the most critical findings.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Project Structure Review
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Analyze:
 
-### `npm run eject`
+- Folder organization
+- Feature boundaries
+- Domain separation
+- Shared vs feature-specific code
+- Coupling between modules
+- Circular dependencies
+- Barrel exports
+- Path aliases
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Identify:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- What works well
+- What creates long-term risk
+- Recommended structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Provide examples.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Component Architecture Review
 
-## Learn More
+Analyze all components and identify:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Components that are too large
+- Components with multiple responsibilities
+- Components with excessive prop drilling
+- Components that should be split
+- Components containing business logic and presentation logic together
+- Repeated UI patterns
+- Reusable abstractions that should exist
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Report:
 
-### Code Splitting
+- Top 20 most problematic components
+- Why they are problematic
+- Suggested refactor approach
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. React Best Practices Review
 
-### Analyzing the Bundle Size
+Analyze usage of:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Hooks
+- Effects
+- Memoization
+- Context
+- State management
+- Custom hooks
+- Rendering patterns
 
-### Making a Progressive Web App
+Detect:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Unnecessary re-renders
+- Derived state issues
+- Effect abuse
+- Missing custom hooks
+- React anti-patterns
 
-### Advanced Configuration
+Provide recommendations.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+5. State Management Review
 
-### Deployment
+Analyze:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Local state
+- Global state
+- Context usage
+- Server state
 
-### `npm run build` fails to minify
+Identify:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- State duplication
+- Incorrect ownership of state
+- Context misuse
+- Opportunities for simplification
+
+Recommend whether additional tools should be considered.
+
+6. Data Fetching Review
+
+Analyze:
+
+- API layer
+- Service layer
+- Query organization
+- Error handling
+- Loading states
+- Caching strategy
+
+Identify inconsistencies and propose a standardized approach.
+
+7. Design System & UI Review
+
+Analyze the usage of metronome-ui.
+
+Identify:
+
+- Components that bypass the design system
+- Duplicated UI components
+- Inconsistent usage patterns
+- Missing abstractions
+
+Recommend improvements to increase consistency.
+
+8. Code Quality Review
+
+Analyze:
+
+- Naming conventions
+- File organization
+- Function complexity
+- Component complexity
+- Type safety
+- Dead code
+- Unused files
+- Unused exports
+- Magic values
+- Large switch statements
+- Deep nesting
+
+Highlight the highest risk areas.
+
+9. TypeScript Review
+
+Analyze:
+
+- any usage
+- unsafe casts
+- duplicated types
+- missing generics
+- weak typing
+- API contract typing
+
+Recommend improvements.
+
+10. Performance Review
+
+Identify:
+
+- Rendering bottlenecks
+- Expensive computations
+- Missing memoization
+- Bundle size concerns
+- Lazy loading opportunities
+- Code splitting opportunities
+
+Prioritize improvements by impact.
+
+11. Testing Review
+
+Analyze:
+
+- Unit tests
+- Integration tests
+- Component tests
+- E2E coverage
+
+Identify gaps and risks.
+
+12. Technical Debt Inventory
+
+Create a categorized inventory:
+
+Critical
+
+Must be fixed immediately.
+
+High
+
+Should be addressed within 1-2 quarters.
+
+Medium
+
+Should be addressed during normal development.
+
+Low
+
+Future improvements.
+
+13. Recommended Target Architecture
+
+Propose a modern architecture suitable for this project.
+
+Include:
+
+- Folder structure
+- Feature organization
+- Shared layer organization
+- Hooks strategy
+- API layer strategy
+- State management strategy
+- Testing strategy
+
+Explain why.
+
+14. Modernization Opportunities
+
+Evaluate whether the following would provide value:
+
+- React Query / TanStack Query
+- Zustand
+- Redux Toolkit
+- React Hook Form
+- Zod
+- Feature-based architecture
+- Domain-driven frontend design
+- Storybook
+- ESLint improvements
+- Prettier
+- Husky
+- lint-staged
+- Dependency boundaries
+- Monorepo considerations
+
+For each:
+
+- Recommended? (Yes/No)
+- Priority
+- Expected impact
+- Migration complexity
+
+15. Refactoring Roadmap
+
+Create a phased implementation plan.
+
+Phase 1: Quick Wins (1-2 weeks)
+
+Phase 2: Foundation Improvements (2-4 weeks)
+
+Phase 3: Architecture Improvements (1-2 months)
+
+Phase 4: Modernization & Scaling (ongoing)
+
+For each phase provide:
+
+- Goals
+- Tasks
+- Estimated effort
+- Expected impact
+- Risks
+
+16. Final Deliverables
+
+Produce:
+
+1. Architecture Health Scorecard
+2. Technical Debt Backlog
+3. Prioritized Refactoring Backlog
+4. Recommended Folder Structure
+5. Architecture Decision Recommendations (ADR style)
+
+Be extremely critical, objective, and evidence-based.
+
+Do not make assumptions without inspecting the codebase.
+
+Whenever possible, include file paths and concrete examples from the repository.
